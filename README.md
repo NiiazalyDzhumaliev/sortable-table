@@ -6,7 +6,7 @@ An app for sorting and filtering athletes in a table using React
 
 Additional description about the project and its features.
 
-![BookStore](public/Screenshot_2.png)
+![Table](public/Screenshot_2.png)
 
 ## Built With
 
@@ -18,7 +18,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo](https://bookstore-react-diamondas.herokuapp.com/)
+[Live Demo](https://epic-albattani-d126ee.netlify.app/)
 
 ## Getting Started
 

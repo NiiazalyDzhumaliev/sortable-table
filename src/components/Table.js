@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import style from '../styles/Table.module.css';
 
 const Table = () => {
   const [sortedField, setSortedField] = useState(null);
@@ -126,10 +127,10 @@ const Table = () => {
       <tbody>
         {sortedBiathletes.map(biathlet => (
           <tr key={biathlet.id}>
-            <td>{biathlet.place}</td>
-            <td>{biathlet.name}</td>
-            <td>{biathlet.accuracy}</td>
-            <td>{biathlet.shooting}</td>
+            <td className={style.table_item}>{biathlet.place}</td>
+            <td className={style.table_item_name}>{biathlet.name}</td>
+            <td className={style.table_item}>{biathlet.accuracy}</td>
+            <td className={style.table_item}>{biathlet.shooting}</td>
           </tr>
         ))}
       </tbody>

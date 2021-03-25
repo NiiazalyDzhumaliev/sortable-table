@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 const Table = () => {
+  const [sortedField, setSortedField] = useState(null);
+
   const biathletes = [
     {
       id: 1,
@@ -72,24 +76,60 @@ const Table = () => {
       shooting: 28.9,
     },
   ];
+
+  let sortedBiathletes = [...biathletes];
+
+  sortedBiathletes.forEach(item => (item.name = item.name.toLowerCase()));
+
+  if (sortedField !== null) {
+    sortedBiathletes.sort((a, b) => {
+      if (a[sortedField] < b[sortedField]) {
+        return -1;
+      }
+      if (a[sortedField] > b[sortedField]) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
   return (
     <table>
       <caption>Результаты</caption>
       <thead>
         <tr>
-          <th>Место</th>
-          <th>Имя</th>
-          <th>Попадания</th>
-          <th>Скорострельность</th>
+          <th>
+            <button type="button" onClick={() => setSortedField('place')}>
+              Место
+            </button>
+          </th>
+          <th>
+            {' '}
+            <button type="button" onClick={() => setSortedField('name')}>
+              Имя
+            </button>
+          </th>
+          <th>
+            {' '}
+            <button type="button" onClick={() => setSortedField('accuracy')}>
+              Попадания
+            </button>
+          </th>
+          <th>
+            {' '}
+            <button type="button" onClick={() => setSortedField('shooting')}>
+              Скорострельность
+            </button>
+          </th>
         </tr>
       </thead>
       <tbody>
-        {biathletes.map(biathlete => (
-          <tr key={biathlete.id}>
-            <td>{biathlete.place}</td>
-            <td>{biathlete.name}</td>
-            <td>{biathlete.accuracy}</td>
-            <td>{biathlete.shooting}</td>
+        {sortedBiathletes.map(biathlet => (
+          <tr key={biathlet.id}>
+            <td>{biathlet.place}</td>
+            <td>{biathlet.name}</td>
+            <td>{biathlet.accuracy}</td>
+            <td>{biathlet.shooting}</td>
           </tr>
         ))}
       </tbody>

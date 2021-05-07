@@ -2,7 +2,7 @@
 
 An app for sorting and filtering athletes in a table using React
 
-> This is test application for Lambda Bird. The goal is to create a sorting table using React.
+> This is a test application for Lambda Bird. The goal is to create a sorting table using React.
 
 Additional description about the project and its features.
 
